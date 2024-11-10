@@ -58,7 +58,7 @@ struct TabSelectorView: View {
                         .foregroundColor(colorForOption(option.index))
                     }
                     .buttonStyle(.borderless)
-                    .animation(nil)
+                    .animation(nil, value: UUID())
                 }
             }
         }

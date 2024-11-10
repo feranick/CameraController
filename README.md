@@ -78,6 +78,11 @@ Clone the project
 $ git clone https://github.com/itaybre/CameraController.git
 ```
 
+Run:
+```
+xcodebuild -derivedDataPath ./build -project CameraController.xcodeproj/ -scheme "CameraController" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+```
+
 You're all set ! Now open the `CameraController.xcodeproj` with Xcode
 
 ## FAQ

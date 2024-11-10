@@ -26,7 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             for _ in 1...4 {
                 path = path.deletingLastPathComponent as NSString
             }
-            NSWorkspace.shared.launchApplication(path as String)
+            //NSWorkspace.shared.launchApplication(path as String) // Deprecated
+            
+            let url = URL(fileURLWithPath: path as String)
+            let configuration = NSWorkspace.OpenConfiguration()
+            configuration.promptsUserIfNeeded = true
+            configuration.allowsRunningApplicationSubstitution = true
+            NSWorkspace.shared.openApplication(at: url, configuration: configuration, completionHandler: nil)
         }
     }
 }
